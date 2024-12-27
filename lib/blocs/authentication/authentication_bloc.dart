@@ -88,7 +88,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
 
   Future<void> _loginUsers(LogInUser event, Emitter<AuthenticationState> emit) async {
     final email = state.email.trim();
-    final password = state.password.trim();
+    final password = state.password;
 
     print("email=$email, password=$password");
 
