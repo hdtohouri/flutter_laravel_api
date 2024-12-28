@@ -19,7 +19,7 @@ class AuthenticationRepository {
       if (respond.statusCode == 200) {
         var responsebodyLogUser = jsonDecode(respond.body);
         print("Voici le user: $responsebodyLogUser");
-        if (responsebodyLogUser['success'] == true) {
+        if (responsebodyLogUser['result'] == true) {
           return RegisterUsers(
             name: user.name,
             email: user.email,
@@ -29,7 +29,7 @@ class AuthenticationRepository {
 
           //Fluttertoast.showToast(msg: "Utilisateur Connecté avec succes");
         } else {
-          print("Erreur côté serveur : ${responsebodyLogUser['message']}");
+          print("Reponse du serveur : ${responsebodyLogUser['message']}");
         }
       }else{
         print("Erreur HTTP : ${respond.statusCode}");
@@ -56,7 +56,7 @@ class AuthenticationRepository {
       if (respond.statusCode == 200) {
         var responsebodyLogUser = jsonDecode(respond.body);
         print("Voici le user: $responsebodyLogUser");
-        if (responsebodyLogUser['success'] == true) {
+        if (responsebodyLogUser['result'] == true) {
           return LoginUsers(
             email: user.email,
             password: user.password,

@@ -118,9 +118,9 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     }else {
       emit(state.copyWith(
         status: FormStatus.error,
-        errorMsg: "Connxion échouée",
+        errorMsg: "Email ou mot de passe incorrect !😢",
       ));
-      print("Connxion échouée");
+      print("Email ou mot de passe incorrect");
     }
   }
 }
